@@ -1,7 +1,6 @@
 package com.ckordes.kindergarten2.entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.Digits;
 import java.util.List;
 
 @Entity

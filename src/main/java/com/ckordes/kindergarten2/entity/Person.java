@@ -6,6 +6,8 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Person {
@@ -31,13 +33,16 @@ public class Person {
 //    @NotNull//(groups = AdultValidation.class)
     @OneToOne //( cascade = {CascadeType.ALL})
     private Address workAddress;
-
 //    @NotBlank//(groups = AdultValidation.class)
     @Email//(groups = AdultValidation.class)
     @Column(unique = true)
     private String email;
     @NotBlank//(groups = AdultValidation.class)
     private String password;
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "person_role", joinColumns = @JoinColumn(name = "person_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles;
 
     public Person() {
     }
@@ -120,5 +125,13 @@ public class Person {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }

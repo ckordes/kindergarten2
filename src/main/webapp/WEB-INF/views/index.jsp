@@ -1,5 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: baltazar
@@ -15,35 +16,33 @@
 </head>
 <body class="container">
 <%@include file="header.jsp" %>
-<div class="main">
-    <h2>Kindergarden</h2>
+<%--<div class="main">--%>
+<%--    <h2>Kindergarden</h2>--%>
 
-<%--    <form:form modelAttribute="loginMode" method="post">--%>
-<%--        Email: <form:input path="email"/>--%>
-<%--        <form:errors path="email"/><br/>--%>
-<%--        Password: <form:password path="password"/>--%>
-<%--        <form:errors path="password"/><br/>--%>
+<%--&lt;%&ndash;    <form:form modelAttribute="loginMode" method="post">&ndash;%&gt;--%>
+<%--&lt;%&ndash;        Email: <form:input path="email"/>&ndash;%&gt;--%>
+<%--&lt;%&ndash;        <form:errors path="email"/><br/>&ndash;%&gt;--%>
+<%--&lt;%&ndash;        Password: <form:password path="password"/>&ndash;%&gt;--%>
+<%--&lt;%&ndash;        <form:errors path="password"/><br/>&ndash;%&gt;--%>
 
-<%--        <input type="submit" value="Login">--%>
+<%--&lt;%&ndash;        <input type="submit" value="Login">&ndash;%&gt;--%>
 
-<%--    </form:form>--%>
-</div>
+<%--&lt;%&ndash;    </form:form>&ndash;%&gt;--%>
+<%--</div>--%>
 
 <div class="general">
     <h3>General Messages</h3>
-<%--    <table class="table">--%>
-
-<%--        <c:forEach items="${generalInfo}" var="info">--%>
-<%--            <tr>--%>
-<%--                <td>--%>
-<%--                    Message: ${info.message}<br/>--%>
-<%--                    Created: ${info.created}<br/>--%>
-<%--                    <br/>--%>
-<%--                </td>--%>
-<%--            </tr>--%>
-<%--        </c:forEach>--%>
-
-<%--    </table>--%>
+    <table class="table">
+        <c:forEach items="${generalInfo}" var="info">
+            <tr>
+                <td>
+                    Message: ${info.message}<br/>
+                    Created: ${info.created}<br/>
+                    <br/>
+                </td>
+            </tr>
+        </c:forEach>
+    </table>
 </div>
 
 <%@include file="footer.jsp" %>

@@ -12,7 +12,7 @@ public class Parent {
     @GeneratedValue
     private long id;
 
-    @OneToOne//(fetch = FetchType.EAGER)
+    @OneToOne
     @NotNull//(groups = AdultValidation.class)
     private Person person;
     @NotBlank//(groups = AdultValidation.class)

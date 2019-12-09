@@ -1,5 +1,6 @@
 package com.ckordes.kindergarten2.security;
 
+import com.ckordes.kindergarten2.service.SpringDataUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -28,6 +29,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public SpringDataUserDetailsService customUserDetailsService() {
+        return new SpringDataUserDetailsService();
     }
 
 }

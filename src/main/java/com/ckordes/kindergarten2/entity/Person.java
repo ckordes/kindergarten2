@@ -33,7 +33,7 @@ public class Person {
 //    @NotNull//(groups = AdultValidation.class)
     @OneToOne //( cascade = {CascadeType.ALL})
     private Address workAddress;
-//    @NotBlank//(groups = AdultValidation.class)
+    @NotBlank//(groups = AdultValidation.class)
     @Email//(groups = AdultValidation.class)
     @Column(unique = true)
     private String email;
